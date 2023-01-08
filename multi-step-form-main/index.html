@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Multi-step form</title>
+  <script src="./script/jquery.js"></script>
+  <script src="./script/script.js"></script>
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+    <main>
+      <!-- Sidebar start -->
+        <section class="sec-1">
+            <div>
+              <span class="num-step step1">1</span>
+              <span>
+                <p>Step 1</p>
+                <h2>Your info</h2>
+              </span>
+            </div>
+            <div>
+              <span class="num-step step2">2</span>
+              <span>
+                <p>Step 2</p>
+                <h2>Select plan</h2>
+              </span>
+            </div>
+            <div>
+              <span class="num-step step3">3</span>
+              <span>
+                <p>Step 3</p>
+                <h2>add-ons</h2>
+              </span>
+            </div>
+            <div>
+              <span class="num-step step4">4</span>
+              <span>
+                <p>Step 4</p>
+                <h2>Summary</h2>
+              </span>
+            </div>
+        </section>
+        <!-- Sidebar end -->
+        <!-- Second section -->
+        <section id="sec-2" class="sec-2">
+          <!-- Step 1 starts -->
+          <div class="step-one step" id="step-1">
+            <h1>Personal info</h1>
+            <p>Please provide your name, email address, and phone number.</p>
+            <form>
+              <div>
+               <span class="l-sec">
+                <label for="">Name</label>
+                <div id="N-error" class="error" ></div>
+               </span>
+                <input placeholder="e.g. Stephen King" type="text" id="name">
+              </div>
+              <div>
+                <span class="l-sec">
+                  <label for="">Email Address</label>
+                  <div id="e-error" class="error" ></div>
+                 </span>
+                <input placeholder="e.g. stephenking@lorem.com" type="email" id="email">
+              </div>
+              <div>
+                <span class="l-sec">
+                  <label for="">Phone Number</label>
+                  <div id="p-error" class="error" ></div>
+                 </span>
+                <input placeholder="e.g. +1 234 567 890" minlength="7" type="number" id="phonenumber">
+              </div>   
+            </form>
+            <div class="button">
+              <button type="button" id="nextBtn1" class="next">Next Step</button>
+            </div>
+          </div>
+          <!-- Step 1 ends  -->
+          <!-- step 2 starts -->
+          <div class="step-2 step" id="step-2">
+            <h1>Select your plan</h1>
+            <p>You have the option of monthly or yearly billing.</p>
+            <div class="grid">
+              <label for="box1">
+                <span id="span1">
+                  <img src="./assets/images/icon-arcade.svg" alt="icon-arcade">
+                  <div>
+                    <h3>Arcade</h3>
+                    <p>$9/mo</p>
+                  </div>
+                </span>
+              </label>
+              <input type="radio"  id="box1" name="first-second-third">
+              <label for="box2">
+                <span id="span2">
+                  <img src="./assets/images/icon-advanced.svg" alt="icon-advanced">
+                  <div>
+                    <h3>Advanced</h3>
+                    <p>$12/mo</p>
+                  </div>
+                </span>
+              </label>
+              <input type="radio" id="box2" name="first-second-third">
+              <label for="box3">
+                <span id="span3">
+                  <img src="./assets/images/icon-pro.svg" alt="icon-pro">
+                  <div>
+                    <h3>Pro</h3>
+                    <p>$15/mo</p>
+                    <p class="free"></p>
+                  </div>
+                </span>
+              </label>
+              <input type="radio" id="box3" name="first-second-third">
+            </div>
+            <div class="toggle">
+              <p>Monthly</p>
+              <!-- Rounded Switch -->
+              <label class="switch">
+                <input type="checkbox" onclick="chk()" id="chkbox">
+                <span class="slider round"></span>
+              </label>
+              <p>Yearly</p>
+            </div>
+              <!-- button section -->
+          <div class="button">
+            <button type="button" id="prevBtn1"  class="back">Go Back</button>
+            <button type="button" id="nextBtn2"  class="next">Next Step</button>
+          </div>
+        </div>
+          <!-- step 2 end -->
+          <div id="step-3" class="step-3 step">
+            <h1>Pick add-ons</h1>
+            <p>Add-ons help enhance your gaming experience.</p>
+            <div>
+              <span class="checkbox">
+                <input type="checkbox" name="" id="">
+                <span>
+                  <h3>Online service</h3>
+                  <p>Access to multiplayer games</p>
+                </span>
+              </span>  
+              <span class="price">
+                <p>+$1/mo</p>
+              </span>
+            </div>
+            <div>
+              <span class="checkbox">
+                <input type="checkbox" name="" id="">
+                <span>
+                  <h3>Larger storage</h3>
+                  <p>Extra 1TB of cloud save</p>
+                </span>
+              </span>
+              <span class="price">
+                <p>+$2/mo</p>
+              </span>
+            </div>
+            <div>
+              <span class="checkbox">
+                <input type="checkbox" name="" id="">
+                <span>
+                  <h3>Customizable Profile</h3>
+                  <p>Custom theme on your profile</p>
+                </span>
+              </span>
+              <span class="price">
+                <p>+$2/mo</p>
+              </span>
+            </div>
+          </div>
+          <!-- Step 4 start -->
+          <div id="step-4" class="step-4 step">
+            <h1>Finishing up</h1>
+            <p>Double-check everything looks OK before confirming.</p>
+            <div class="sub">
+              <span class="sub-sec first-sub-sec">
+                <div>
+                  <h3 id="h3">arcarde(monthly)</h3>
+                  <a href="#">change</a>
+                </div>
+                <p class="price" id="price">$9/mo</p>
+              </span>
+              <hr>
+              <span class="sub-sec">
+                <p>online service</p>
+                <p class="price">+$1/mo</p>
+              </span>
+              <span class="sub-sec">
+                <p>largest storage</p>
+                <p class="price">+$2/mo</p>
+              </span>
+            </div>
+            <div class="total">
+              <p>Total (per month/year)</p>
+              <p class="price2">+$12/mo</p>
+            </div>
+          </div>  
+          <!-- Thank you page -->
+          <div id="step-5" class="step-5 step">
+            <img src="./assets/images/icon-thank-you.svg" alt="icon-thank-you">
+            <h1>Thank you!</h1>
+            <p>Thanks for confirming your subscription! We hope you have fun 
+              using our platform. If you ever need support, please feel free 
+              to email us at support@loremgaming.com.</p>
+          </div>
+        </section>
+    </main>    
+</body>
+</html>
